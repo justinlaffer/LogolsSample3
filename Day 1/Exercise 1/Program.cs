@@ -1,12 +1,12 @@
 using System;
 
-namespace ZombieSimulator
+namespace Day1
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Person Justin= new Zombie();
+           Console.WriteLine("Hello World!");
         }
     }
 }

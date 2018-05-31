@@ -670,11 +670,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\7659\\Documents\\LogolsSample3\\LogolsSample3\\Day 2\\Exercise 1\\Exercise 1.csproj",
+      "projectUniqueName": "C:\\Users\\7659\\Documents\\LogolsSample3\\LogolsSample3\\Day 2\\Exercise 1\\Exercise 1.csproj",
       "projectName": "Exercise 1",
-      "projectPath": "c:\\Users\\7659\\Documents\\LogolsSample3\\LogolsSample3\\Day 2\\Exercise 1\\Exercise 1.csproj",
+      "projectPath": "C:\\Users\\7659\\Documents\\LogolsSample3\\LogolsSample3\\Day 2\\Exercise 1\\Exercise 1.csproj",
       "packagesPath": "C:\\Users\\7659\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\7659\\Documents\\LogolsSample3\\LogolsSample3\\Day 2\\Exercise 1\\obj\\",
+      "outputPath": "C:\\Users\\7659\\Documents\\LogolsSample3\\LogolsSample3\\Day 2\\Exercise 1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

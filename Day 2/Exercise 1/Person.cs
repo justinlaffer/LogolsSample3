@@ -2,7 +2,7 @@
 
 namespace ZombieSimulator
 {
-  public class Person
+  public abstract class Person
     {  
         public int DistanceTraveled{get;set;}
         
@@ -10,7 +10,7 @@ namespace ZombieSimulator
         {
          Console.WriteLine("new person created");
         }
-      public void Walk(int minutes)
+      public virtual void Walk(int minutes)
         {
             DistanceTraveled = DistanceTraveled + minutes;
         }
