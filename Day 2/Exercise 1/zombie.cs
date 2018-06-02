@@ -2,11 +2,12 @@ using System;
 
 namespace ZombieSimulator
 {
-  public sealed class Zombie : Person
+  public class Zombie : IPerson
     {
-        public override void Walk(int minutes)
-        { 
-            DistanceTraveled = DistanceTraveled + minutes;
+        public decimal DistanceTraveled{get;set;}
+        public void Walk (decimal minutes)
+        {
+           DistanceTraveled = DistanceTraveled  + minutes;
         }
     }
 }

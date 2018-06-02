@@ -4,15 +4,15 @@ namespace ZombieSimulator
 {
   public abstract class Person
     {  
-        public int DistanceTraveled{get;set;}
+        public decimal DistanceTraveled{get;set;}
         
         public Person()
         {
          Console.WriteLine("new person created");
         }
-      public virtual void Walk(int minutes)
+      public virtual void Walk(decimal minutes)
         {
-            DistanceTraveled = DistanceTraveled + minutes;
+            DistanceTraveled = DistanceTraveled + (minutes * 1.5M);
         }
         public int CalculateDistance(int minutes)
         {
