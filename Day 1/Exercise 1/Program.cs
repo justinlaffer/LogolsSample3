@@ -1,12 +1,12 @@
 using System;
 
-namespace Day1
+namespace Day_1
 {
     class Program
     {
         static void Main(string[] args)
         {
-           Console.WriteLine("Hello World!");
+           Console.WriteLine("Status Report of all government Employees");
         }
     }
 }

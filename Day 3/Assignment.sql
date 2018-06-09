@@ -57,7 +57,7 @@ WHERE PersonStatusID=3;
 select p.FirstName, p.LastName, p.PersonID, ps.PersonStatusID, ps.StatusDescription
 from Person p
 inner join PersonStatus ps
-ON p.PersonStatusID= ps.PersonStatusID;
+ON p.PersonStatusID = ps.PersonStatusID;
 
 select p.FirstName, p.LastName, p.PersonID, ps.PersonStatusID, ps.StatusDescription
 from Person p
