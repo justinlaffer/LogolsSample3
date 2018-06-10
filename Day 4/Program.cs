@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Day4
 {
@@ -6,14 +7,14 @@ namespace Day4
     {
         static void Main(string[] args)
         {
-          StatusRespository respository = new StatusRespository();
-          List<Status> status = respository.GetAll();
+          StatusRepository repository = new StatusRepository();
+          List<Status> statuses = repository.GetAll();
 
           foreach(Status status in statuses)
           {
               Console.WriteLine(status.FirstName + " " + 
               status.LastName + "has status" + 
-              status.Status.Description);
+              status.StatusDescription);
           }
         }
     }
