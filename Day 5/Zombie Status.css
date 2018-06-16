@@ -4,7 +4,10 @@
 
 theader{color:lightgrey;}
 
-img{float:right;}
+/*img{float:right;}*/
 
+div{display:flex;}
+
+img{order:1;}
 
 
