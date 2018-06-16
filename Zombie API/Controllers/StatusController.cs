@@ -27,8 +27,10 @@ namespace Zombie_API.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody]string value)
+        public void Post([FromBody]Status value)
         {
+            StatusRepository repository = new StatusRepository();
+            repository.Insert(value);
         }
 
         // PUT api/values/5

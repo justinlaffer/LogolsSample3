@@ -20,6 +20,36 @@ namespace Zombie_API
                   return dbConnection.Query<Status>(sql
                   , commandType: CommandType.Text).ToList();
            }
-       }
+       }   
+        public void Insert(Status status)
+        {
+            using (IDbConnection dbConnection = Connection)
+           {
+                dbConnection.Open();
+                dbConnection.Execute(
+               "insert into person(FirstName,LastName)"
+                + "values(@Firstname, @Lastname);"
+                ,new {
+                  FirstName = status.FirstName,
+                  LastName = status.LastName
+                }
+                  , commandType: CommandType.Text);
+           }
+       } 
+        public void Update(Status status)
+        {
+            using (IDbConnection dbConnection = Connection)
+            {
+                dbConnection.Open();
+                dbConnection.Execute(
+                    "update status"
+                    + "set FirstName = @FirstName, @LastName, @StatusDescription)"
+                    + "where PersonStatusId= @PersonStatusId;" 
+                    ,new {
+                    
+                        
+            }
+        }
+        
    }
 }
