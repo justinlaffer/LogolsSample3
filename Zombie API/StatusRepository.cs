@@ -48,7 +48,7 @@ namespace Zombie_API
                     ,new {
                     
                         
-            }
+           }
         }
         
    }

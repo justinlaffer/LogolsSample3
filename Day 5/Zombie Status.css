@@ -1,4 +1,4 @@
-#header{text-align:center;}
+/*#header{text-align:center;}*/
 
 .paragraph{color:darkgrey;}
 
@@ -6,8 +6,19 @@ theader{color:lightgrey;}
 
 /*img{float:right;}*/
 
-div{display:flex;}
+div{display:flex;
+justify-content:center;}
 
 img{order:1;}
+
+header{display:flex;
+    justify-content:center;}
+
+   p{display:flex;
+     justify-content:center;} 
+
+body{margin:50px;
+     padding:20px;
+    width:100%;}
 
 
