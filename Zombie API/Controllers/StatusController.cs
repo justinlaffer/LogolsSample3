@@ -35,14 +35,18 @@ namespace Zombie_API.Controllers
 
         // PUT api/values/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        public void Put ([FromBody] Status value)
         {
+            StatusRepository repository = new StatusRepository();
+            repository.Update(value);
         }
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public void Delete([FromBody] Status value)
         {
+             StatusRepository repository = new StatusRepository();
+              repository.Delete(value);
         }
     }
 }

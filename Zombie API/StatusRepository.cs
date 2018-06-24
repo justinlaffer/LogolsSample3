@@ -42,14 +42,32 @@ namespace Zombie_API
             {
                 dbConnection.Open();
                 dbConnection.Execute(
-                    "update status"
-                    + "set FirstName = @FirstName, @LastName, @StatusDescription)"
-                    + "where PersonStatusId= @PersonStatusId;" 
+                    "update Person"
+                    + "set FirstName = @FirstName, LastName = @LastName, StatusDescription= @StatusDesciption "
+                    + "where PersonStatusId = @PersonStatusId;"
                     ,new {
-                    
-                        
-           }
-        }
+                        StatusDescription= status.StatusDescription,
+                        FirstName = status.FirstName,
+                        LastName = status.LastName,
+                        PersonStatusId = status.PersonStatusId
+                    } 
+                    ,commandType: CommandType.Text);
+                  }
         
+
+         Public void Delete(int id)
+        {
+          using (IDbConnection dbConnection = Connection)
+          {
+              dbConnection.Open();
+              dbConnection.Execute(
+           
+          
+        
+        
+        
+    }
+
    }
 }
+
