@@ -46,7 +46,7 @@ namespace Zombie_API.Controllers
         public void Delete([FromBody] Status value)
         {
              StatusRepository repository = new StatusRepository();
-              repository.Delete(value);
+              repository.Delete(value)
         }
     }
 }

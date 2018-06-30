@@ -1,90 +1,94 @@
-let test = [1,3,3,4, 2, 4, 2];
+let Tests = [1,3,3,4, 2, 4, 2];
 
-let gettest = [
-    {test:4,name:'Elliott'},
-    {test:2,name:'Sam'},
-    {test:1,name:'Justin'},
-    {test:3,name:'Ben'}
+let nametest = [
+    {nametest:4,name:'Elliott'},
+    {nametest:2,name:'Sam'},
+    {nametest:1,name:'Justin'},
+    {nametest:3,name:'Ben'}
+  
 ];
 
 let counter=0;
-while(counter<test.length) {
-    console.log(gettest(test));
-
-    function gettest(testNumber) {
-        if(test=== 1) {
-        return "Alive";
-        }
-        else if(test === 2) {
-            return "Zombie";
-        }
-        else if(test === 3) {
-            return "Dead";
-        }
-        else if(test === 4) {
-            return "Unknown";
-        }
-    console.log(test[counter]);
+while(counter<Tests.length) {
+    console.log(getTest(Tests[counter]));
+    console.log(Tests[counter]);
     counter++;
  }
-  for(let counter=0; counter< test.length; counter++){  
-   console.log(gettest(test));
 
-    function gettest(testNumber) {
-        if(test === 1) {
+ function getTest(Tests) {
+    if(Tests=== 1) {
+        return "Alive";
+    }
+    else if(Tests === 2) {
+        return "Zombie";
+    }
+    else if(Tests === 3) {
+        return "Dead";
+    }
+    else if(Tests === 4) {
+        return "Unknown";
+    }
+ }
+
+ /*
+  for(let counter=0; counter< Tests.length; counter++){  
+   console.log(getTest(Tests));
+
+    function getTest(Tests) {
+        if(Tests === 1) {
             return "Alive";
             }
-            else if(test === 2) {
+            else if(Tests === 2) {
                 return "Zombie";
             }
-            else if(test === 3) {
+            else if(Tests === 3) {
                 return "Dead";
             }
-            else if(test === 4) {
+            else if(Tests === 4) {
                 return "Unknown";
             }
     }
  do {
-     let status= test[counter];
-     console.log(test[counter]);counter++;
+     let status= Tests[counter];
+     console.log(Tests[counter]);counter++;
  
-     function gettest(testNumber) {
-            if(testNumber === 1) {
+     function getTest(Tests) {
+            if(Tests === 1) {
                 return "Alive";
                 }
-                else if(testNumber === 2) {
+                else if(Tests === 2) {
                     return "Zombie";
                 }
-                else if(testNumber === 3) {
+                else if(Tests === 3) {
                     return "Dead";
                 }
-                else if(testNumber=== 4) {
+                else if(Tests=== 4) {
                     return "Unknown";
                 }
     }
- } while(counter<test.length)
+ } while(counter<Tests.length)
 
- for(let person of test) {
-    console.log(gettest(test));
+ for(let person of Tests) {
+    console.log(getTest(Tests));
  }
 
-     function gettest(testNumber) {
-         if(testNumber === 1) {
+     function getTest(Tests) {
+         if(Tests === 1) {
            return "Alive";
          }
-         else if(testNumber === 2) {
+         else if(Tests === 2) {
            return "Zombie";
         }
-        else if(testNumber === 3) {
+        else if(Tests === 3) {
           return "Dead";
         }
-        else if(testNumber === 4) {
+        else if(Tests === 4) {
           return "Unknown";
         }
      
-    }
+    } */
 
-switch(test)
+switch(Tests)
  {
     case 1:
      console.log('The government employee is Alive');
@@ -99,5 +103,3 @@ switch(test)
     console.log('The current status of the government employee is Unknown');
     break;
  }
-}
-}

@@ -1,13 +1,16 @@
-<!DOCTYPE hmtl>
 <html>
-    <head>
-
-    </head>
     <body>
        <div id="test"></div>
     </body>
-
     <script>
-        document.getElementById("test").innerText = "Hello!";
-    </script> 
+       let test = document.getElementById("test");
+      let newParagraph = document.createElement("p");
+      newParagraph.innerText ="click";
+      test.appendChild(newParagraph);
+      newParagraph.addEventListener("click again", function() {
+         let newText = document.createElement("div");
+         newText.innerText = "text";
+         test.appendChild(newText);
+      });
+    </script>
 </html>

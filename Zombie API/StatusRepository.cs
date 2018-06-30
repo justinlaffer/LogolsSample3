@@ -52,15 +52,20 @@ namespace Zombie_API
                         PersonStatusId = status.PersonStatusId
                     } 
                     ,commandType: CommandType.Text);
-                  }
+            }
+        }
         
-
-         Public void Delete(int id)
+        public void Delete(int id)
         {
-          using (IDbConnection dbConnection = Connection)
-          {
-              dbConnection.Open();
-              dbConnection.Execute(
+            using (IDbConnection dbConnection = Connection)
+            {
+                dbConnection.Open();
+                dbConnection.Execute(
+                    "delete "
+                    + "from timetravellog "
+                    + "where TimeTravelLogId = @TimeTravelLogId;"
+                    ,new {TimeTravelLogId = id} ,commandType: CommandType.Text);
+            }
            
           
         

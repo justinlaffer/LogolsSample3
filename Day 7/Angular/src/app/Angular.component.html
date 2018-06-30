@@ -1,0 +1,26 @@
+<header>{{title}}</header>
+    <p class="paragraph">A report of how many people in the world are zombies</p>
+    <div>
+    <img src="./zombie.jpg" alt="Zombie" height= "300px" width="200px"/>
+    <table>
+      <thead>
+        <tr>
+        <th colspan="4"></th>
+        </tr>
+        <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Status Id</th>
+        <th>Status</th>
+        </tr>
+      </thead>
+          <tr *ngFor ="let status of statuses">
+             <td>{{status.firstName}}</td>
+             <td>{{status.lastName}}</td>
+             <td>{{status.personStatusId}}</td>
+             <td>{{status.statusDescription}}</td>
+        </tr>
+    </table>
+    </div>
+  
+    
