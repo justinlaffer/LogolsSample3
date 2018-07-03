@@ -8,11 +8,11 @@ using System.Text;
 
 namespace Zombie_API
 {
-    public class Repository
+    public class repository
     {
         private string connectionString;
 
-        public Repository()
+        public repository()
         {
             var builder = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
@@ -20,6 +20,7 @@ namespace Zombie_API
             var connectionStringConfig = builder.Build();
             connectionString = connectionStringConfig.GetConnectionString("DefaultConnection");
         }
+        
         public IDbConnection Connection
         {
             get

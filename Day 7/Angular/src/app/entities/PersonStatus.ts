@@ -7,7 +7,7 @@ export class PersonStatus {
 
     public statusDescription:string;
 
-   // public personId:number;
+   public personId:number;
     }  
 
      

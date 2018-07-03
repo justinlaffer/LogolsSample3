@@ -6,55 +6,33 @@ using System.Linq;
 
 namespace Zombie_API
 {
-   public class StatusRepository: Repository
-   {
-       public List<Status> GetAll()
-       {
-           using (IDbConnection dbConnection = Connection)
-           {
-                dbConnection.Open();
-                string sql= "select p.FirstName, p.LastName, ps.StatusDescription "
-                        + "from person p "
-                        + "inner join personStatus ps "
-                        + "on p.PersonStatusID = ps.PersonStatusID";
-                  return dbConnection.Query<Status>(sql
-                  , commandType: CommandType.Text).ToList();
-           }
-       }   
-        public void Insert(Status status)
-        {
-            using (IDbConnection dbConnection = Connection)
-           {
-                dbConnection.Open();
-                dbConnection.Execute(
-               "insert into person(FirstName,LastName)"
-                + "values(@Firstname, @Lastname);"
-                ,new {
-                  FirstName = status.FirstName,
-                  LastName = status.LastName
-                }
-                  , commandType: CommandType.Text);
-           }
-       } 
-        public void Update(Status status)
+   public class StatusRepository : repository
+    {
+        public IEnumerable<Status> GetAll()
         {
             using (IDbConnection dbConnection = Connection)
             {
                 dbConnection.Open();
-                dbConnection.Execute(
-                    "update Person"
-                    + "set FirstName = @FirstName, LastName = @LastName, StatusDescription= @StatusDesciption "
-                    + "where PersonStatusId = @PersonStatusId;"
-                    ,new {
-                        StatusDescription= status.StatusDescription,
-                        FirstName = status.FirstName,
-                        LastName = status.LastName,
-                        PersonStatusId = status.PersonStatusId
-                    } 
-                    ,commandType: CommandType.Text);
+                return dbConnection.Query<Status>(
+                    "select p.PersonId, p.FirstName, p.LastName, p.PersonStatusId, ps.StatusDescription"
+                    + " from Person p inner join PersonStatus ps on p.PersonStatusId = ps.PersonStatusId;"
+                    , commandType: CommandType.Text);
             }
         }
-        
+
+        public Status Get(int id)
+        {
+            using (IDbConnection dbConnection = Connection)
+            {
+                dbConnection.Open();
+                return dbConnection.Query<Status>(
+                    "select PersonId, FirstName, LastName, PersonStatusId "
+                    + "from Person "
+                    + "where PersonId = @PersonId;"
+                    ,new {PersonId = id} ,commandType: CommandType.Text).FirstOrDefault();
+            }
+        }
+
         public void Delete(int id)
         {
             using (IDbConnection dbConnection = Connection)
@@ -62,17 +40,47 @@ namespace Zombie_API
                 dbConnection.Open();
                 dbConnection.Execute(
                     "delete "
-                    + "from timetravellog "
-                    + "where TimeTravelLogId = @TimeTravelLogId;"
-                    ,new {TimeTravelLogId = id} ,commandType: CommandType.Text);
+                    + "from Person "
+                    + "where PersonId = @PersonId;"
+                    ,new {PersonId = id} ,commandType: CommandType.Text);
             }
-           
-          
-        
-        
-        
-    }
+        }
 
-   }
+        public void Update(Status Status)
+        {
+            using (IDbConnection dbConnection = Connection)
+            {
+                dbConnection.Open();
+                dbConnection.Execute(
+                    "update Person "
+                    + "set FirstName = @FirstName, LastName = @LastName, PersonStatusId = @PersonStatusId "
+                    + "where PersonId = @PersonId;"
+                    ,new {
+                        PersonId = Status.PersonId, 
+                        FirstName = Status.FirstName,
+                        LastName = Status.LastName,
+                        PersonStatusId = Status.PersonStatusId
+                    } 
+                    ,commandType: CommandType.Text);
+            }
+        }
+
+        public void Insert(Status Status)
+        {
+            using (IDbConnection dbConnection = Connection)
+            {
+                dbConnection.Open();
+                dbConnection.Execute(
+                    "insert into Person(FirstName, LastName, PersonStatusId) "
+                    + "values(@FirstName, @LastName, @PersonStatusId);"
+                    ,new { 
+                        FirstName = Status.FirstName,
+                        LastName = Status.LastName,
+                        PersonStatusId = Status.PersonStatusId
+                    } 
+                    ,commandType: CommandType.Text);
+            }
+        }
+    }
 }
 

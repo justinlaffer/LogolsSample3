@@ -9,15 +9,15 @@ namespace Zombie_API.Controllers
     [Route("api/[controller]")]
     public class StatusController : Controller
     {
+        StatusRepository repository;
+
+        
         // GET api/values
         [HttpGet]
-        public List<Status> Get()
+        public IEnumerable<Status> Get()
         {
-            StatusRepository repository = new StatusRepository();
-
             return repository.GetAll();
         }
-
         // GET api/values/5
         [HttpGet("{id}")]
         public string Get(int id)
@@ -27,26 +27,24 @@ namespace Zombie_API.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody]Status value)
+        public void Post([FromBody]Status Status)
         {
-            StatusRepository repository = new StatusRepository();
-            repository.Insert(value);
+            repository.Insert(Status);
         }
 
         // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put ([FromBody] Status value)
+        [HttpPut]
+        public void Put ([FromBody] Status Status)
         {
-            StatusRepository repository = new StatusRepository();
-            repository.Update(value);
+             repository.Update(Status);
+        }
+        
+         // DELETE api/values/5
+        public void Delete(int id)
+        {
+            repository.Delete(id);
         }
 
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete([FromBody] Status value)
-        {
-             StatusRepository repository = new StatusRepository();
-              repository.Delete(value)
-        }
     }
 }
+
