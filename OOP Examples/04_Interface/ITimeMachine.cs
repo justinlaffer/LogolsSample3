@@ -5,7 +5,7 @@ namespace TimeMachine
 {
     public interface ITimeMachine
     {
-        decimal DistanceTraveled {get; set;}
+       // decimal DistanceTraveled {get; set;}//
 
         void TimeTravel(int year);
     }

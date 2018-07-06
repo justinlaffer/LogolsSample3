@@ -1,0 +1,28 @@
+<header>
+    <h1>Traveler</h1>
+  </header>
+  <hr />
+  <p>
+    Enter the new traveler.
+  </p> 
+  <div>
+    First Name:
+  </div>
+  <div>
+    <input id="FirstName" type="text" [(ngModel)]="traveler.firstName" />
+  </div>
+  <div>
+    Last Name:
+  </div>
+  <div>
+    <input id="LastName" type="text" [(ngModel)]="traveler.lastName" />
+  </div>
+  <div>
+    <button (click)="insertClick()">{{operation}}</button>
+  </div>
+  <div>
+    <a routerLink="/log">Time Travel Log</a>
+  </div>
+  <div>
+    <a routerLink="/timeMachine">Time Machine</a>
+  </div>
