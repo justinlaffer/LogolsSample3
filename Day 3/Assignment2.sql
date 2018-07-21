@@ -1,5 +1,5 @@
-Create database Zombie
-Use Zombie
+Create database Zombie;
+Use Zombie;
 
 Create Table Person
 (
@@ -29,7 +29,7 @@ Values
 ('Justin','Laffer',1,1),
 ('Trevor','Daniel',2,2),
 ('Sam','Cohen',3,3),
-('Elliott','Daniel',4,4)
+('Elliott','Daniel',4,4);
 
 select * from PersonStatus;
 select * from Person;
