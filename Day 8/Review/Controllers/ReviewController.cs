@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Review.Controllers
 {
-    [Route("api/[controller]")
+    [Route("api/[controller]")]
     public class ReviewController : Controller
     {
        ReviewController respository;
@@ -17,7 +17,7 @@ namespace Review.Controllers
        }
         // GET api/values
         [HttpGet]
-        public IEnumerable<Review> Get()
+        public IEnumerable<ReviewController> GetAll()
         {
             return respository.GetAll();
         }
