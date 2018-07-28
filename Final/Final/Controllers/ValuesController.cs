@@ -1,13 +1,13 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Final_Project.Controllers
+namespace Final.Controllers
 {
     [Route("api/[controller]")]
-    public class ProjectController : Controller
+    public class ValuesController : Controller
     {
         // GET api/values
         [HttpGet]

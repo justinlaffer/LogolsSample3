@@ -6,13 +6,13 @@ using System.Data;
 using System.IO;
 using System.Text;
 
-namespace Final_Project
+namespace Final
 {
-    public class repository
+    public class Repository
     {
         private string connectionString;
 
-        public repository()
+        public Repository()
         {
             var builder = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
