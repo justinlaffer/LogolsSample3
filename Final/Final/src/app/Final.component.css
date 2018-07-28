@@ -1,1 +1,10 @@
-.paragraph {text-align:center;}
+header{text-align:center;
+font-size:24px;}
+
+body{background-color:lightblue;}
+
+.paragraph{text-align:center;
+font-size:28px;}
+
+thead{text-align:center;
+font-size:24px;}

@@ -15,13 +15,13 @@ namespace Final
                 dbConnection.Open();
                 return dbConnection.Query<Member>(
                     "select m.FirstName, m.LastName, ms.MemberStatusID, ms.MemberStatusDescription, c.ClassDescription"
-                    + "from Member m"
-                    + "inner join MemberStatus ms"
-                    + "ON m.MemberStatusID = ms.MemberStatusID"
-                    + "inner join ClassMember cm"
-                    + "On m.MemberId = cm.MemberID"
-                    + "inner join Class c"
-                    + "On c.ClassID = cm.ClassID; " 
+                    + " from Member m"
+                    + " inner join MemberStatus ms"
+                    + " ON m.MemberStatusID = ms.MemberStatusID"
+                    + " inner join ClassMember cm"
+                    + " On m.MemberId = cm.MemberID"
+                    + " inner join Class c"
+                    + " On c.ClassID = cm.ClassID; " 
                     , commandType: CommandType.Text);
             }
         }
@@ -47,4 +47,5 @@ namespace Final
        
     }
 }
+
 
