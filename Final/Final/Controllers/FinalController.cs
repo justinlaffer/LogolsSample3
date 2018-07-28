@@ -9,11 +9,11 @@ namespace Final.Controllers
     [Route("api/[controller]")]
     public class FinalController : Controller
     {
-       FinalRepository Repository;
+       StatusRepository Repository;
 
         public FinalController()
         {
-            Repository = new FinalRepository();
+            Repository = new StatusRepository();
         }
 
         // GET api/values
